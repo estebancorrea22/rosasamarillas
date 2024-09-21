@@ -1,0 +1,137 @@
+body {
+    background-color: #e20ae2; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.message-container {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.message {
+    font-size: 2em;
+    padding-bottom:50px ;
+    color: yellow;
+    text-shadow: 0 0 20px yellow, 0 0 30px gold;
+    margin: 0; 
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlide 3s forwards;
+}
+
+.message:hover {
+    cursor: pointer;
+    transform: scale(1.1); 
+}
+
+.show-roses {
+    padding: 10px 20px;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.show-roses:hover {
+    background-color: #ffb84d; 
+}
+
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    align-items: center;
+    max-width: 90%;
+    opacity: 0; 
+    animation: floatIn 0.6s forwards;
+}
+.rose {
+    position: relative;
+    display: inline-block;
+    animation: rotate 4s linear infinite;
+}
+
+.petal {
+    width: 25px;
+    height: 50px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.petal-1 {
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.petal-2 {
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(135deg);
+}
+
+.petal-3 {
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(225deg);
+}
+
+.petal-4 {
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(315deg);
+}
+
+.center {
+    width: 30px;
+    height: 30px;
+    background-color: orange;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes floatIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
